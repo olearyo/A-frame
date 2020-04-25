@@ -20,7 +20,7 @@
       <img id="floor" src="textures/patterns/color.jpg">
     </a-assets>
     <a-scene>
-            <a-entity id="camera" look-controls cursor="rayOrigin: mouse"></a-entity>
+            <!-- <a-entity id="camera" look-controls cursor="rayOrigin: mouse"></a-entity> -->
 
       <a-entity id="aunty" geometry="primitive: plane; height: 1.5; width: 2" position="-1 1.4 -3" 
         material="src: #person-1; transparent: true; opacity: 2"></a-entity>
@@ -46,8 +46,9 @@
       <a-plane position="0 0 -4" rotation="-90 0 0" width="100" height="100" material="src: #floor; repeat: 20 20"></a-plane>
 
 
-      <a-entity text="value: Hello World;" position="-1 0.5 -3"></a-entity>
-
+      <a-camera>
+        <a-cursor></a-cursor>
+      </a-camera>
 
       <a-sky color="#F0FFFF"></a-sky>
     </a-scene>
