@@ -2,11 +2,13 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Hello, World! - A-Frame</title>
-    <meta name="description" content="Hello, World! - A-Frame">
+    <title>Holi VR</title>
+    <meta name="description" content="A Holi WebXR experience using A-Frame">
     <script src="js/aframe.min.js"></script>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-spritesheet-component/dist/aframe-spritesheet-component.min.js"></script>
+
   </head>
   <body>
     <a-assets>
@@ -17,6 +19,11 @@
       <img id="person-5" src="images/family.png">
       <img id="person-6" src="images/guy1.png">
       <img id="person-7" src="images/jump.png">
+      <img id="person-8" src="images/pareja.png">
+      <img id="person-9" src="images/pareja1.png">
+      <img id="explosion-1" src="textures/sprites/explosion1.png">
+      <img id="explosion-2" src="textures/sprites/holi.png">
+    
       <img id="floor" src="textures/patterns/color.jpg">
     </a-assets>
     <a-scene>
@@ -24,18 +31,36 @@
 
       <a-entity id="aunty" geometry="primitive: plane; height: 1.5; width: 2" position="-1 1.4 -3" 
         material="src: #person-1; transparent: true; opacity: 2"></a-entity>
-      <a-entity id="boy" geometry="primitive: plane; height: 1.5; width: 2" position="-3 1.25 -1"
+
+      <a-entity id="boy" rotation="5 40 0" geometry="primitive: plane; height: 1.5; width: 2" position="-3 1.25 -1"
         material="src: #person-2; transparent: true; opacity: 2"></a-entity>
-      <a-entity id="couple" geometry="primitive: plane; height: 1.5; width: 2" position="3 1.4 -1"
+
+      <a-entity id="couple1" rotation="0 -180 0" geometry="primitive: plane; height: 1.5; width: 2" position="3 1.4 2"
         material="src: #person-3; transparent: true; opacity: 2"></a-entity>
+
+      <a-entity id="couple-jumping" rotation="0 -180 0" geometry="primitive: plane; height: 1.5; width: 2" position="0 1.4 2"
+        material="src: #person-8; transparent: true; opacity: 2"></a-entity>
+
+      <a-entity id="couple2" rotation="0 -180 0" geometry="primitive: plane; height: 1.5; width: 2" position="-4 1.4 2"
+        material="src: #person-9; transparent: true; opacity: 2"></a-entity>
 
       <a-entity id="excited" geometry="primitive: plane; height: 1.5; width: 2" position="1 1.4 -2"
         material="src: #person-4; transparent: true; opacity: 2"
-        event-set__enter="_event: mouseenter; _target: #cylinderText; visible: true"
-        event-set__leave="_event: mouseleave; _target: #cylinderText; visible: false">
+        event-set__enter="_event: mouseenter; _target: #explosion; visible: true"
+        event-set__leave="_event: mouseleave; _target: #explosion; visible: false">
+      <a-light type="ambient" color="#fff"></a-light>
 
-        <a-text id="cylinderText" value="This is a holi explosion" align="center" color="#FFF" visible="false" position="0 -0.55 0.55"
-          geometry="primitive: plane; width: 1.75" material="color: #333"></a-text>
+        <!-- <a-text id="cylinderText" value="This is a holi explosion" align="center" color="#FFF" visible="false" position="0 -0.55 0.55"
+          geometry="primitive: plane; width: 1.75" material="color: #333"></a-text> -->
+        <!-- <a-entity id="explosion" geometry="primitive: plane; height: 1.5; width: 2" position="3 1.4 -1"
+          material="src: #explosion-1; transparent: true; opacity: 2"></a-entity> -->
+          <a-entity camera look-controls>
+        <a-image id="explosion"  material="src: #explosion-2; transparent: true; opacity: 2"
+          sprite-sheet="cols:16; rows: 1; progress: 2;" position="0 0 0.2"></a-image>
+
+            </a-entity>
+          </a-entity>
+
       </a-entity>
 
 
@@ -52,5 +77,19 @@
 
       <a-sky color="#F0FFFF"></a-sky>
     </a-scene>
+       <script type="text/javascript">
+          var animation = {progress: 0 };
+
+        var tween = new TWEEN.Tween(animation)
+            .to({progress: 1 }, 1000)
+            .onUpdate(function(){
+            document.querySelector('a-image').setAttribute('sprite-sheet', 'progress', animation.progress);
+            });
+
+
+        tween.onComplete(function() {animation.progress = 0; });
+        tween.chain(tween);
+        tween.start();
+    </script>
   </body>
 </html>
