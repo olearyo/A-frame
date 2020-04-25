@@ -33,20 +33,24 @@
             <!-- <a-entity id="camera" look-controls cursor="rayOrigin: mouse"></a-entity> -->
 
       <a-entity id="aunty" geometry="primitive: plane; height: 1.5; width: 2" position="-1 0.7 -3" 
-        material="src: #person-1; transparent: true; opacity: 2"></a-entity>
+        material="src: #person-1; transparent: true; opacity: 2"
+        event-set__enter="_event: mouseenter; _target: #bg; color: #F44336"></a-entity>
 
       <a-entity id="boy" rotation="5 40 0" geometry="primitive: plane; height: 1.5; width: 2" position="-3 0.7 -1"
-        material="src: #person-2; transparent: true; opacity: 2"></a-entity>
+        material="src: #person-2; transparent: true; opacity: 2"
+        event-set__enter="_event: mouseenter; _target: #bg; color: #2196F3"></a-entity>
 
       <a-entity id="couple1" rotation="0 -180 0" geometry="primitive: plane; height: 1.5; width: 2" position="3 0.7 2"
         material="src: #person-3; transparent: true; opacity: 2"
-        ></a-entity>
+        event-set__enter="_event: mouseenter; _target: #bg; color: #009688"></a-entity>
 
       <a-entity id="couple-jumping" rotation="0 -180 0" geometry="primitive: plane; height: 1.5; width: 2" position="0 0.7 2"
-        material="src: #person-8; transparent: true; opacity: 2"></a-entity>
+        material="src: #person-8; transparent: true; opacity: 2"
+        event-set__enter="_event: mouseenter; _target: #bg; color: #E91E63"></a-entity>
 
       <a-entity id="couple2" rotation="0 -180 0" geometry="primitive: plane; height: 1.5; width: 2" position="-4 0.7 2"
-        material="src: #person-9; transparent: true; opacity: 2"></a-entity>
+        material="src: #person-9; transparent: true; opacity: 2"
+        event-set__enter="_event: mouseenter; _target: #bg; color: #840C43"></a-entity>
 
       <a-entity id="excited" geometry="primitive: plane; height: 1.5; width: 2" position="1 0.7 -2"
         material="src: #person-4; transparent: true; opacity: 2"
@@ -83,7 +87,7 @@
 
 
 
-      <a-sky color="#F0FFFF"></a-sky>
+      <a-sky id="bg" color="#F0FFFF"></a-sky>
     </a-scene>
        <script type="text/javascript">
         //   var animation = {progress: 0 };
