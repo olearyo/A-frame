@@ -30,15 +30,15 @@
         material="src: #person-3; transparent: true; opacity: 2"></a-entity>
 
       <a-entity id="excited" geometry="primitive: plane; height: 1.5; width: 2" position="1 1.4 -2"
-        material="src: #person-4; transparent: true; opacity: 2">
+        material="src: #person-4; transparent: true; opacity: 2"
+        event-set__enter="_event: mouseenter; _target: #cylinderText; visible: true"
+        event-set__leave="_event: mouseleave; _target: #cylinderText; visible: false">
+
+        <a-text id="cylinderText" value="This is a holi explosion" align="center" color="#FFF" visible="false" position="0 -0.55 0.55"
+          geometry="primitive: plane; width: 1.75" material="color: #333"></a-text>
       </a-entity>
 
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" shadow
-        event-set__enter="_event: mouseenter; color: #026fc9" event-set__leave="_event: mouseleave; color: #4CC3D9">
-        <!-- This animation begins when the box is clicked with the mouse. -->
-        <a-animation attribute="rotation" dur="3000" fill="forwards" to="0 360 0" direction="alternate" begin="click">
-        </a-animation>
-      </a-box>
+
 
       <!-- <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box> -->
       <!-- <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
