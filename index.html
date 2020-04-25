@@ -5,6 +5,7 @@
     <title>Hello, World! - A-Frame</title>
     <meta name="description" content="Hello, World! - A-Frame">
     <script src="js/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
   </head>
   <body>
     <a-assets>
@@ -25,7 +26,12 @@
       <a-entity id="couple" geometry="primitive: plane; height: 1.5; width: 2" position="3 1.4 -1"
         material="src: #person-3; transparent: true; opacity: 2"></a-entity>
       <a-entity id="excited" geometry="primitive: plane; height: 1.5; width: 2" position="1 1.4 -2"
-        material="src: #person-4; transparent: true; opacity: 2"></a-entity>
+        material="src: #person-4; transparent: true; opacity: 2"
+          event-set__enter="_event: mouseenter; color: #026fc9"
+          event-set__leave="_event: mouseleave; color: #4CC3D9">
+                <a-animation attribute="rotation" dur="3000" fill="forwards" to="0 360 0" direction="alternate" begin="click">
+                </a-animation>
+      </a-entity>
 
       <!-- <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box> -->
       <!-- <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
