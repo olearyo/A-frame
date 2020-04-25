@@ -11,7 +11,8 @@
     <script src="https://unpkg.com/aframe-animation-component/dist/aframe-animation-component.min.js"></script>
   </head>
   <body>
-    <a-scene fog="type: linear; color: #FFC0CB; far: 6; near: 0" animation__fog="property: fog.color; to: #ffca96; dur: 10000">
+    <a-scene >
+    <!-- id="bg" fog="type: linear; color: #FFC0CB; far: 6; near: 0" animation__fog="property: fog.color; to: #ffca96; dur: 10000"> -->
 
     <a-assets>
       <img id="person-1" src="images/aunty.png">
@@ -34,23 +35,23 @@
 
       <a-entity id="aunty" geometry="primitive: plane; height: 1.5; width: 2" position="-1 0.7 -3" 
         material="src: #person-1; transparent: true; opacity: 2"
-        event-set__enter="_event: mouseenter; _target: #bg; color: #F44336"></a-entity>
+        event-set__enter="_event: mouseenter; _target: #bg; color: #22B2E7"></a-entity>
 
       <a-entity id="boy" rotation="5 40 0" geometry="primitive: plane; height: 1.5; width: 2" position="-3 0.7 -1"
         material="src: #person-2; transparent: true; opacity: 2"
-        event-set__enter="_event: mouseenter; _target: #bg; color: #2196F3"></a-entity>
+        event-set__enter="_event: mouseenter; _target: #bg; color: #F51367"></a-entity>
 
       <a-entity id="couple1" rotation="0 -180 0" geometry="primitive: plane; height: 1.5; width: 2" position="3 0.7 2"
         material="src: #person-3; transparent: true; opacity: 2"
-        event-set__enter="_event: mouseenter; _target: #bg; color: #009688"></a-entity>
+        event-set__enter="_event: mouseenter; _target: #bg; color: #FCB32C"></a-entity>
 
       <a-entity id="couple-jumping" rotation="0 -180 0" geometry="primitive: plane; height: 1.5; width: 2" position="0 0.7 2"
         material="src: #person-8; transparent: true; opacity: 2"
-        event-set__enter="_event: mouseenter; _target: #bg; color: #E91E63"></a-entity>
+        event-set__enter="_event: mouseenter; _target: #bg; color: #F96825"></a-entity>
 
       <a-entity id="couple2" rotation="0 -180 0" geometry="primitive: plane; height: 1.5; width: 2" position="-4 0.7 2"
         material="src: #person-9; transparent: true; opacity: 2"
-        event-set__enter="_event: mouseenter; _target: #bg; color: #840C43"></a-entity>
+        event-set__enter="_event: mouseenter; _target: #bg; color: #9FE23B"></a-entity>
 
       <a-entity id="excited" geometry="primitive: plane; height: 1.5; width: 2" position="1 0.7 -2"
         material="src: #person-4; transparent: true; opacity: 2"
@@ -70,6 +71,13 @@
 
       </a-entity>
 
+      <!-- 
+        other fog colors/background colors
+      color: #063665 
+      color: #A61265 
+      color: #BD4BD7 
+      color: #26D1AA  -->
+      
 
 
       <!-- <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box> -->
