@@ -9,10 +9,11 @@
     <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
     <script src="https://unpkg.com/aframe-spritesheet-component/dist/aframe-spritesheet-component.min.js"></script>
     <script src="https://unpkg.com/aframe-animation-component/dist/aframe-animation-component.min.js"></script>
+    <script src="js/holi.js"></script> 
   </head>
   <body>
-    <a-scene >
-    <!-- id="bg" fog="type: linear; color: #FFC0CB; far: 6; near: 0" animation__fog="property: fog.color; to: #ffca96; dur: 10000"> -->
+    <a-scene fog="type: linear; color: #FFC0CB; far: 6; near: 0;">
+    <a-animation begin="showFog" attribute="fog.color" to="#ffca96" dur="10000"></a-animation>
 
     <a-assets>
       <img id="person-1" src="images/aunty.png">
@@ -95,7 +96,7 @@
 
 
 
-      <a-sky id="bg" color="#F0FFFF"></a-sky>
+      <a-sky color="#F0FFFF"></a-sky>
     </a-scene>
        <script type="text/javascript">
         //   var animation = {progress: 0 };
