@@ -13,7 +13,7 @@
   </head>
   <body>
     <a-scene fog="type: linear; color: #FFC0CB; far: 6; near: 0;">
-    <a-animation begin="showFog" attribute="fog.color" to="#ffca96" dur="10000"></a-animation>
+    <a-animation begin="showFog" attribute="fog.color" to="#ffca96" dur="2000"></a-animation>
 
     <a-assets>
       <img id="person-1" src="images/aunty.png">
@@ -27,7 +27,9 @@
       <img id="person-9" src="images/pareja1.png">
       <img id="explosion-1" src="textures/sprites/explosion1.png">
       <img id="explosion-2" src="textures/sprites/holi.png">
+      <img id="explosion-3" src="textures/sprites/explosion.gif">
       <img id="floor" src="textures/patterns/color.jpg">
+      <img id="background" src="textures/patterns/bg.jpg">
 
       <a-mixin id="text"
       text="
@@ -70,7 +72,7 @@
       </a-entity>
 
       <a-entity id="main" visible="false">
-        <a-sky id="bg" color="#F0FFFF"></a-sky>
+        <a-sky id="bg" color="#F0FFFF" material="src: #background;"></a-sky>
         <a-plane position="0 0 -4" rotation="-90 0 0" width="100" height="100" material="src: #floor; repeat: 20 20"></a-plane>
         
         <a-entity id="aunty" geometry="primitive: plane; height: 1.5; width: 2" position="-2 0.7 -3" 
@@ -105,8 +107,8 @@
             material="src: #explosion-1; transparent: true; opacity: 2"></a-entity> -->
 
             <a-entity camera look-controls>
-              <a-image id="explosion"  material="src: #explosion-2; transparent: true; opacity: 2"
-                sprite-sheet="cols:16; rows: 1; progress: 2;" position="0 0 0.2"></a-image>
+              <a-image id="explosion"  material="src: #explosion-3; transparent: true; opacity: 1"
+                 position="0 0 0.2"></a-image>
             </a-entity>
           </a-entity>
       </a-entity>
