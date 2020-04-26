@@ -30,7 +30,7 @@
       <a-mixin id="text"
       text="
         align: center; 
-        width: 18;
+        width: 10;
         value: Experience the \n Magic of Holi;
         color: #A61265;
         opacity: 1;"
@@ -51,19 +51,19 @@
         <a-text
           id="intro_text"
           mixin="text" 
-          position="0 2 -3"
+          position="0 1.2 -3"
         >
         </a-text>
         <a-entity 
-          geometry="primitive: plane; width: 1.5; height: 0.6;" 
-          position="0 0.3 -4"
+          geometry="primitive: plane; width: 1.5; height: 0.5;" 
+          position="0 0 -4"
           event-set__enterMain="_event: mouseenter; _target: #main; visible: true;"
           event-set__enterIntro="_event: mouseenter; _target: #intro; visible: false;"
         ></a-entity>
         <a-text 
           id="intro_start"
           mixin="start" 
-          position="0 0.5 -3"
+          position="0 0.25 -3"
         ></a-text>
       </a-entity>
 
