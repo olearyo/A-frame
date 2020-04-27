@@ -10,6 +10,7 @@
     <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
     <script src="https://unpkg.com/aframe-spritesheet-component/dist/aframe-spritesheet-component.min.js"></script>
     <script src="https://unpkg.com/aframe-animation-component/dist/aframe-animation-component.min.js"></script>
+    <!-- <script src="https://unpkg.com/aframe-gradient-sky@1.0.4/dist/gradientsky.min.js"></script> -->
     <script src="js/holi.js"></script> 
   </head>
   <body>
@@ -39,11 +40,12 @@
       <img id="explosion-1" src="textures/sprites/explosion1.png">
       <img id="explosion-2" src="textures/sprites/holi.png">
       <img id="explosion-3" src="textures/sprites/explosion.gif">
-      <!-- EXPLOSION -->
 
+      <!-- TEXTURES -->
       <img id="floor" src="textures/patterns/color.jpg">
       <img id="background" src="textures/patterns/bg.jpg">
 
+      <!-- TEXT -->
       <a-mixin id="text"
       text="
         align: center; 
@@ -64,7 +66,14 @@
 
       <!-- <a-entity id="camera" look-controls cursor="rayOrigin: mouse"></a-entity> -->
 
+
+      <!-- INTRODUCTION SCENE -->
+
       <a-entity id="intro" visible="true">
+<!-- 
+              <a-entity id="sky" geometry="primitive: sphere; radius: 5000"
+                material="shader: gradient; topColor: 235 235 245; bottomColor: 185 185 210" scale="-1 1 1"></a-entity> -->
+                
         <a-sky id="bg" color="#FF00C1" material="src: #background;"></a-sky>
         <a-light 
           type="ambient" 
@@ -116,32 +125,46 @@
         ></a-text>
       </a-entity>
 
+      
+      <!-- HOLI SCENE -->
       <a-entity id="main" visible="false">
         <a-sky id="bg" color="#F0FFFF" material="src: #background;"></a-sky>
         <a-plane position="0 0 -4" rotation="-90 0 0" width="100" height="100" material="src: #floor; repeat: 20 20"></a-plane>
         
-        <a-entity id="aunty" geometry="primitive: plane; height: 1.5; width: 2" position="-2 0.7 -3" 
-          material="src: #person-1; transparent: true; opacity: 2"
+        <a-entity id="aunty" geometry="primitive: plane; height: 1.5" position="-2 0.7 -2.8" 
+          material="src: #person-1; transparent: true; opacity: 2; alpha-test: 0.5"
           event-set__enter="_event: mouseenter; _target: #bg; color: #22B2E7"></a-entity>
 
-        <a-entity id="boy" rotation="5 40 0" geometry="primitive: plane; height: 1.5; width: 2" position="-3 0.7 -1"
-          material="src: #person-2; transparent: true; opacity: 2"
+        <a-entity id="boy" rotation="5 40 0" geometry="primitive: plane; height: 1.5" position="-3 0.7 -1"
+          material="src: #person-2; transparent: true; opacity: 2; alpha-test: 0.5"
           event-set__enter="_event: mouseenter; _target: #bg; color: #F51367"></a-entity>
 
-        <a-entity id="couple1" rotation="0 -180 0" geometry="primitive: plane; height: 1.5; width: 2" position="3 0.7 2"
-          material="src: #person-3; transparent: true; opacity: 2"
+        <a-entity id="couple1" rotation="0 -100 0" geometry="primitive: plane; height: 1.5" position="3 0.7 2"
+          material="src: #person-3; transparent: true; opacity: 2; alpha-test: 0.5"
           event-set__enter="_event: mouseenter; _target: #bg; color: #FCB32C"></a-entity>
 
-        <a-entity id="couple-jumping" rotation="0 -180 0" geometry="primitive: plane; height: 1.5; width: 2" position="0 0.7 2"
-          material="src: #person-8; transparent: true; opacity: 2"
+        <a-entity id="couple-jumping" rotation="0 -180 0" geometry="primitive: plane; height: 1.5; width:2" position="0 0.7 2"
+          material="src: #person-8; transparent: true; opacity: 2; alpha-test: 0.5"
           event-set__enter="_event: mouseenter; _target: #bg; color: #F96825"></a-entity>
 
-        <a-entity id="couple2" rotation="0 -180 0" geometry="primitive: plane; height: 1.5; width: 2" position="-4 0.7 2"
-          material="src: #person-9; transparent: true; opacity: 2"
+        <a-entity id="couple2" rotation="0 -180 0" geometry="primitive: plane; height: 1.9" position="-4 1 2"
+          material="src: #person-9; transparent: true; opacity: 2; alpha-test: 0.5"
           event-set__enter="_event: mouseenter; _target: #bg; color: #9FE23B"></a-entity>
 
-        <a-entity id="excited" geometry="primitive: plane; height: 1.5; width: 2" position="2 0.7 -2"
-          material="src: #person-4; transparent: true; opacity: 2"
+        <a-entity id="family" rotation="0 -190 0" geometry="primitive: plane; height: 1.5" position="-3 0.7 4"
+          material="src: #person-5; transparent: true; opacity: 2; alpha-test: 0.5"
+          event-set__enter="_event: mouseenter; _target: #bg; color: #F96825"></a-entity>
+        
+        <a-entity id="guy1" rotation="0 -180 0" geometry="primitive: plane; height: 1.5" position="2 1 4"
+          material="src: #person-6; transparent: true; opacity: 2; alpha-test: 0.5"
+          event-set__enter="_event: mouseenter; _target: #bg; color: #9FE23B"></a-entity>
+
+        <a-entity id="girl1" geometry="primitive: plane; height: 1.2" position="1 0.7 -4.5"
+          material="src: #person-14; transparent: true; opacity: 2; alpha-test: 0.5"
+          event-set__enter="_event: mouseenter; _target: #bg; color: #22B2E7"></a-entity>
+
+        <a-entity id="excited" geometry="primitive: plane; height: 1.5" position="2 0.7 -2"
+          material="src: #person-4; transparent: true; opacity: 2; alpha-test: 0.5"
           event-set__enter="_event: mouseenter; _target: #explosion; visible: true"
           event-set__leave="_event: mouseleave; _target: #explosion; visible: false">
         <a-light type="ambient" color="#fff"></a-light>
