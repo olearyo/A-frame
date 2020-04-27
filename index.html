@@ -53,6 +53,13 @@
         color: #A61265;
         opacity: 1;"
       ></a-mixin>
+      <a-mixin id="instructions"
+      text="
+        align: center; 
+        width: 6;
+        value: Use the yellow cursor to navigate \n across the screen. Hover over people \n in the next scene for a surprise!;
+        color: #A61265;"
+      ></a-mixin>
       <a-mixin id="start"
       text="
         align: center; 
@@ -101,20 +108,52 @@
         ></a-plane>
         <a-text
           mixin="text" 
-          position="0 1.2 -3"
+          position="0 1 -3"
+          animation="
+          property: opacity;
+          from: 1; 
+          to: 0; 
+          dur: 1000; 
+          delay: 5000"
+        >
+        </a-text>
+        <a-text
+          mixin="instructions" 
+          position="0 1 -3"
+          opacity="0"
+          animation="
+            property: opacity;
+            from: 0; 
+            to: 1; 
+            dur: 1000; 
+            delay: 5500"
         >
         </a-text>
         <a-entity 
           id="introBtn"
           geometry="primitive: plane; width: 1.2; height: 0.4;" 
           position="0 0.2 -3"
+          material="color: #0080FF; opacity: 0"
           event-set__enterMain="_event: mouseenter; _target: #main; visible: true;"
           event-set__enterIntro="_event: mouseenter; _target: #intro; visible: false;"
           sound="src: url(song/song.mp3); on: mouseenter; loop: true"
+          animation="
+            property: material.opacity;
+            from: 0; 
+            to: 1; 
+            dur: 1000; 
+            delay: 5500"
         ></a-entity>
         <a-text
           mixin="start" 
           position="0 0.2 -3"
+          opacity="0"
+          animation="
+            property: opacity;
+            from: 0; 
+            to: 1; 
+            dur: 1000; 
+            delay: 5500"
         ></a-text>
       </a-entity>
 
