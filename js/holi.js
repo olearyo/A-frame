@@ -7,6 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const couple1El = document.querySelector('#couple1');
   const coupleJumpingEl = document.querySelector('#couple-jumping');
   const couple2El = document.querySelector('#couple2');
+  const familyEl = document.querySelector('#family');
+  const guy1El = document.querySelector('#guy1');
+  const girl1El = document.querySelector('#girl1');
   const excitedEl = document.querySelector('#excited');
 
   auntyEl.addEventListener('mouseenter', () => {
@@ -29,8 +32,20 @@ document.addEventListener("DOMContentLoaded", () => {
     setFogColor('#9FE23B');    
   });
 
+  familyEl.addEventListener('mouseenter', () => {
+    setFogColor('#26D1AA');    
+  });
+
+  guy1El.addEventListener('mouseenter', () => {
+    setFogColor('#BD4BD7');    
+  });
+
+  girl1El.addEventListener('mouseenter', () => {
+    setFogColor('#A61265');    
+  });
+
   excitedEl.addEventListener('mouseenter', () => {
-    setFogColor('#FFC0CB');    
+    setFogColor('#B4EFFB');    
   });
 
   const setFogColor = (color) => {
@@ -42,5 +57,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     sceneEl.emit('showFog');
   }
-
 });
