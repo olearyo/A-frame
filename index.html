@@ -66,7 +66,7 @@
 
       <a-entity id="intro" visible="true">
         <a-sky id="bg" color="#FF00C1" material="src: #background;"></a-sky>
-        <a-light 
+        <!-- <a-light 
           type="ambient" 
           color="#0080FF" 
           intensity="1"
@@ -90,14 +90,14 @@
             loop: true;
             dir: alternate"
         >
-        </a-light>
-        <a-plane 
+        </a-light> -->
+        <!-- <a-plane 
           position="0 0 -4"
           width="100" 
           height="100"
           id="intro-bg" 
           color="#FF00C1"
-        ></a-plane>
+        ></a-plane> -->
         <a-text
           mixin="text" 
           position="0 1.2 -3"
@@ -109,6 +109,7 @@
           position="0 0.2 -3"
           event-set__enterMain="_event: mouseenter; _target: #main; visible: true;"
           event-set__enterIntro="_event: mouseenter; _target: #intro; visible: false;"
+          sound="src: url(song/song.mp3); on: mouseenter; loop: true"
         ></a-entity>
         <a-text
           mixin="start" 
@@ -157,13 +158,6 @@
             </a-entity>
           </a-entity>
       </a-entity>
-
-      <!-- 
-        other fog colors/background colors
-      color: #063665 
-      color: #A61265 
-      color: #BD4BD7 
-      color: #26D1AA  -->
       
       <!-- <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box> -->
       <!-- <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
