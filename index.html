@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Holi VR</title>
+    <link rel="icon" type="image/png" href="favicon.png">
     <meta name="description" content="A Holi WebXR experience using A-Frame">
     <script src="js/aframe.min.js"></script>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
@@ -16,6 +17,7 @@
     <a-animation begin="showFog" attribute="fog.color" to="#ffca96" dur="2000"></a-animation>
 
     <a-assets>
+      <!-- PEOPLE -->
       <img id="person-1" src="images/aunty.png">
       <img id="person-2" src="images/boy1.png">
       <img id="person-3" src="images/couple1.png">
@@ -25,9 +27,20 @@
       <img id="person-7" src="images/jump.png">
       <img id="person-8" src="images/pareja.png">
       <img id="person-9" src="images/pareja1.png">
+      <img id="person-10" src="images/couple2.png">
+      <img id="person-11" src="images/couple3.png">
+      <img id="person-12" src="images/couple4.png">
+      <img id="person-13" src="images/couple5.png">
+      <img id="person-14" src="images/girl1.png">
+      <img id="person-15" src="images/grandpa1.png">
+      <img id="person-16" src="images/grandpa2.png">
+      
+      <!-- EXPLOSION -->
       <img id="explosion-1" src="textures/sprites/explosion1.png">
       <img id="explosion-2" src="textures/sprites/holi.png">
       <img id="explosion-3" src="textures/sprites/explosion.gif">
+      
+      <!-- TEXTURES -->
       <img id="floor" src="textures/patterns/color.jpg">
       <img id="background" src="textures/patterns/bg.jpg">
 
@@ -139,7 +152,7 @@
             material="src: #explosion-1; transparent: true; opacity: 2"></a-entity> -->
 
             <a-entity camera look-controls>
-              <a-image id="explosion"  material="src: #explosion-3; transparent: true; opacity: 1"
+              <a-image id="explosion"  transparent="true" alpha-test="0.5"  src="#explosion-2" 
                  position="0 0 0.2"></a-image>
             </a-entity>
           </a-entity>
@@ -160,7 +173,7 @@
       </a-entity> -->
 
       <a-camera position="0 1 0">
-        <a-cursor></a-cursor>
+        <a-cursor color="#fdfd96"></a-cursor>
       </a-camera>
 
     </a-scene>
