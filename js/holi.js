@@ -32,31 +32,31 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     
     couple1El.addEventListener('mouseenter', () => {
-      setFogColor('#FCB32C');    
-    });
-    
-    coupleJumpingEl.addEventListener('mouseenter', () => {
-      setFogColor('#F96825');    
-    });
-    
-    couple2El.addEventListener('mouseenter', () => {
-      setFogColor('#9FE23B');    
-    });
-    
-    familyEl.addEventListener('mouseenter', () => {
-      setFogColor('#26D1AA');    
-    });
-    
-    guy1El.addEventListener('mouseenter', () => {
       setFogColor('#BD4BD7');    
     });
     
+    coupleJumpingEl.addEventListener('mouseenter', () => {
+      setFogColor('#9FE23B');    
+    });
+    
+    couple2El.addEventListener('mouseenter', () => {
+      setFogColor('#26D1AA');    
+    });
+    
+    familyEl.addEventListener('mouseenter', () => {
+      setFogColor('#F96825');    
+    });
+    
+    guy1El.addEventListener('mouseenter', () => {
+      setFogColor('#FCB32C');    
+    });
+    
     girl1El.addEventListener('mouseenter', () => {
-      setFogColor('#A61265');    
+      setFogColor('#B4EFFB');    
     });
     
     excitedEl.addEventListener('mouseenter', () => {
-      setFogColor('#B4EFFB');    
+      setFogColor('#A61265');    
     });
     
   });
