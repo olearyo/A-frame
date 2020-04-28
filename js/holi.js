@@ -22,6 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const guy1El = document.querySelector('#guy1');
     const girl1El = document.querySelector('#girl1');
     const excitedEl = document.querySelector('#excited');
+
+    const explosion = document.querySelector('#explosion');
     
     auntyEl.addEventListener('mouseenter', () => {
       setFogColor('#22B2E7');
@@ -56,7 +58,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     
     excitedEl.addEventListener('mouseenter', () => {
-      setFogColor('#A61265');    
+      setFogColor('#A61265'); 
+      var scales = {
+        'scaleX': 0,
+        'scaleY': 0,
+        'scaleX': 0
+      }
+
+      AFRAME.anime({
+        targets: scales,
+        scaleX: 1,
+        scaleY: 1,
+        scaleX: 1,
+        loop: true,
+        direction: 'alternate',
+        update: function(){
+          explosion.setAttribute('scale', {x: scales.scaleX, y: scales.scaleY, z: scales.scaleZ});
+        }
+      });   
     });
     
   });
