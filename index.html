@@ -147,15 +147,15 @@
             delay: 5500"
         >
         </a-text>
-        <!-- sound="src: url(song/song.mp3); on: mouseenter; loop: true" -->
+        <!-- sound="src: url(song/song.mp3); on: mouseenter; loop: true"
+              event-set__enterMain="_event: mouseenter; _target: #main; visible: true;"
+            event-set__enterIntro="_event: mouseenter; _target: #intro; visible: false;" -->
 
         <a-entity 
           id="introBtn"
           geometry="primitive: plane; width: 1.2; height: 0.4;" 
           position="0 0.2 -3"
           material="color: #0080FF; opacity: 0"
-          event-set__enterMain="_event: mouseenter; _target: #main; visible: true;"
-          event-set__enterIntro="_event: mouseenter; _target: #intro; visible: false;"
 
           animation="
             property: material.opacity;

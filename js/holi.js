@@ -12,6 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const bgSong = document.querySelector('#bgSong');
+  const intro = document.querySelector('#intro');
+  const main = document.querySelector('#main');
+
 
   document.getElementById('introBtn').addEventListener('click', () => {
 
@@ -38,6 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const explosion9 = document.querySelector('#explosion-9');
 
     bgSong.play();
+    intro.setAttribute('visible', false);
+    main.setAttribute('visible', true);
+
 
     auntyEl.addEventListener('mouseenter', () => {
       setFogColor('#22B2E7');
