@@ -77,12 +77,18 @@
         value: Begin;
         color: #fff;"
       ></a-mixin>
+      <a-mixin id="openingScene" text="
+        align: center; 
+        width: 4;
+        value: Yay! Enjoy Holi! \n Look down when you \n want to end the experience;
+        color: #A61265;">
+      </a-mixin>
     </a-assets>
     <!-- <a-scene fog="type: linear; color: #FFC0CB; far: 10; near: 0"> -->
 
       <!-- <a-entity id="camera" look-controls cursor="rayOrigin: mouse"></a-entity> -->
 
-      <a-entity id="intro" visible="true">
+      <a-entity id="intro" visible="false">
         <a-sky id="bg" color="#FF00C1" material="src: #background;"></a-sky>
         <a-light 
           type="ambient" 
@@ -167,9 +173,17 @@
         ></a-text>
       </a-entity>
 
-      <a-entity id="main" visible="false">
+      <a-entity id="main" visible="true">
         <a-sky id="bg" color="#F0FFFF" material="src: #background;"></a-sky>
-        <a-plane position="0 0 -4" rotation="-90 0 0" width="100" height="100" material="src: #floor; repeat: 20 20"></a-plane>
+        <a-plane position="0 -1 -4" rotation="-90 0 0" width="100" height="100" material="src: #floor; repeat: 20 20"></a-plane>
+
+        <a-text mixin="openingScene" position="0 1 -3" animation="
+          property: opacity;
+          from: 1; 
+          to: 0.2; 
+          dur: 1000; 
+          delay: 5000">
+        </a-text>
         
         <a-entity id="aunty" geometry="primitive: plane; height: 1.5" position="-2 0.7 -2.8" 
           material="src: #person-1; transparent: true; opacity: 2; alpha-test: 0.5"
@@ -268,8 +282,24 @@
             <a-cursor></a-cursor>
       </a-entity> -->
 
+
+      <!-- <a-plane id="endBtn" color="#0080FF" height="2" width="5" rotation="-90 0 0"></a-plane> -->
+      <!-- <a-box id="endBtn" color="#fdfd96" depth="2" height="5" rotation="0 0 0" position="0 0 0.2"></a-box> -->
+      <a-entity id="endBtn" look-controls  geometry="primitive: plane; height: 0.2; width: 0.6" material="color: #fff864"
+            position="0 -0.5 0"
+            text="width: 1; value: Are you sure you want to \n end the experience?; align: center; color: #ff8800"
+            animation="
+              property: material.opacity;
+              from: 0; 
+              to: 1; 
+              dur: 1000; 
+              delay: 2000">
+      </a-entity>
+
+
+
       <a-camera position="0 1 0">
-        <a-cursor color="#fdfd96"></a-cursor>
+        <a-cursor color="#ff7b00"></a-cursor>
       </a-camera>
 
     </a-scene>

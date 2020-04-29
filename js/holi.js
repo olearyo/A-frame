@@ -22,6 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const guy1El = document.querySelector('#guy1');
     const girl1El = document.querySelector('#girl1');
     const excitedEl = document.querySelector('#excited');
+    const endBtn = document.querySelector('#endBtn');
+
 
     const explosion1 = document.querySelector('#explosion-1');
     const explosion2 = document.querySelector('#explosion-2');
@@ -199,6 +201,10 @@ document.addEventListener("DOMContentLoaded", () => {
           explosion8.setAttribute('scale', {x: scales.scaleX, y: scales.scaleY, z: scales.scaleZ});
         }
       });  
+    });
+
+    endBtn.addEventListener('mouseenter', () => {
+      console.log("exit scene");
     });
     
     excitedEl.addEventListener('mouseenter', () => {
