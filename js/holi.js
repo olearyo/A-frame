@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const girl1El = document.querySelector('#girl1');
     const excitedEl = document.querySelector('#excited');
     const endBtn = document.querySelector('#endBtn');
-
+    const SoundBtn = document.querySelector('#introBtn');
 
     const explosion1 = document.querySelector('#explosion-1');
     const explosion2 = document.querySelector('#explosion-2');
@@ -205,10 +205,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     endBtn.addEventListener('mouseenter', () => {
       console.log("exit scene");
+
       setTimeout(function () {
         endBtn.setAttribute('visible', false);
+        SoundBtn.components.sound.stopSound();
       }, 4000);
-      
+
+
     });
 
     excitedEl.addEventListener('mouseenter', () => {
