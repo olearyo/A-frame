@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const bgSong = document.querySelector('#bgSong');
 
-  document.getElementById('introBtn').addEventListener('mouseenter', () => {
+  document.getElementById('introBtn').addEventListener('click', () => {
 
     const auntyEl = document.querySelector('#aunty');
     const boyEl = document.querySelector('#boy');
