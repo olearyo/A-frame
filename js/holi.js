@@ -214,11 +214,13 @@ document.addEventListener("DOMContentLoaded", () => {
       });  
     });
 
-    endBtn.addEventListener('mouseenter', () => {
+    endBtn.addEventListener('click', () => {
       console.log("exit scene");
 
       setTimeout(function () {
         endBtn.setAttribute('visible', false);
+        intro.setAttribute('visible', true);
+        main.setAttribute('visible', false);
         bgSong.stopSound();
       }, 4000);
 
