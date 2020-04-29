@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
     sceneEl.emit('showFog');
   };
 
+  const bgSong = document.querySelector('#bgSong');
+
   document.getElementById('introBtn').addEventListener('mouseenter', () => {
 
     const auntyEl = document.querySelector('#aunty');
@@ -34,6 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const explosion7 = document.querySelector('#explosion-7');
     const explosion8 = document.querySelector('#explosion-8');
     const explosion9 = document.querySelector('#explosion-9');
+
+    bgSong.play();
 
     auntyEl.addEventListener('mouseenter', () => {
       setFogColor('#22B2E7');
@@ -208,7 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       setTimeout(function () {
         endBtn.setAttribute('visible', false);
-        SoundBtn.components.sound.stopSound();
+        bgSong.stopSound();
       }, 4000);
 
 

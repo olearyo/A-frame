@@ -54,6 +54,8 @@
       <!-- TEXTURES -->
       <img id="floor" src="textures/patterns/color.jpg">
       <img id="background" src="textures/patterns/bg.jpg">
+      <audio id="bgSong" src="song/song.mp3" preload="auto"></audio>
+
 
       <a-mixin id="text"
       text="
@@ -145,6 +147,8 @@
             delay: 5500"
         >
         </a-text>
+        <!-- sound="src: url(song/song.mp3); on: mouseenter; loop: true" -->
+
         <a-entity 
           id="introBtn"
           geometry="primitive: plane; width: 1.2; height: 0.4;" 
@@ -152,7 +156,7 @@
           material="color: #0080FF; opacity: 0"
           event-set__enterMain="_event: mouseenter; _target: #main; visible: true;"
           event-set__enterIntro="_event: mouseenter; _target: #intro; visible: false;"
-          sound="src: url(song/song.mp3); on: mouseenter; loop: true"
+
           animation="
             property: material.opacity;
             from: 0; 
