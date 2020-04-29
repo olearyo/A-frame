@@ -205,8 +205,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     endBtn.addEventListener('mouseenter', () => {
       console.log("exit scene");
+      setTimeout(function () {
+        endBtn.setAttribute('visible', false);
+      }, 4000);
+      
     });
-    
+
     excitedEl.addEventListener('mouseenter', () => {
       setFogColor('#A61265'); 
       var scales = {
