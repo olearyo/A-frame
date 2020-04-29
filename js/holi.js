@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const bgSong = document.querySelector('#bgSong');
   const intro = document.querySelector('#intro');
   const main = document.querySelector('#main');
+  const endBtn = document.querySelector('#endBtn');
 
 
   document.getElementById('introBtn').addEventListener('click', () => {
@@ -27,8 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const guy1El = document.querySelector('#guy1');
     const girl1El = document.querySelector('#girl1');
     const excitedEl = document.querySelector('#excited');
-    const endBtn = document.querySelector('#endBtn');
-    const SoundBtn = document.querySelector('#introBtn');
+    // const SoundBtn = document.querySelector('#introBtn');
 
     const explosion1 = document.querySelector('#explosion-1');
     const explosion2 = document.querySelector('#explosion-2');
@@ -43,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     bgSong.play();
     intro.setAttribute('visible', false);
     main.setAttribute('visible', true);
+    endBtn.setAttribute('visible', true);
 
 
     auntyEl.addEventListener('mouseenter', () => {
