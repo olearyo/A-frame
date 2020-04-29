@@ -22,6 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const guy1El = document.querySelector('#guy1');
     const girl1El = document.querySelector('#girl1');
     const excitedEl = document.querySelector('#excited');
+    const endBtn = document.querySelector('#endBtn');
+
 
     const explosion = document.querySelector('#explosion');
     
@@ -55,6 +57,10 @@ document.addEventListener("DOMContentLoaded", () => {
     
     girl1El.addEventListener('mouseenter', () => {
       setFogColor('#B4EFFB');    
+    });
+
+    endBtn.addEventListener('mouseenter', () => {
+      console.log("exit scene");
     });
     
     excitedEl.addEventListener('mouseenter', () => {
