@@ -54,6 +54,8 @@
       <!-- TEXTURES -->
       <img id="floor" src="textures/patterns/color.jpg">
       <img id="background" src="textures/patterns/bg.jpg">
+      <audio id="bgSong" src="song/song.mp3" preload="auto"></audio>
+
 
       <a-mixin id="text"
       text="
@@ -145,14 +147,16 @@
             delay: 5500"
         >
         </a-text>
-        <a-entity 
+        <!-- sound="src: url(song/song.mp3); on: mouseenter; loop: true"
+              event-set__enterMain="_event: mouseenter; _target: #main; visible: true;"
+            event-set__enterIntro="_event: mouseenter; _target: #intro; visible: false;" -->
+
+        <a-entity audiohandler
           id="introBtn"
           geometry="primitive: plane; width: 1.2; height: 0.4;" 
           position="0 0.2 -3"
           material="color: #0080FF; opacity: 0"
-          event-set__enterMain="_event: mouseenter; _target: #main; visible: true;"
-          event-set__enterIntro="_event: mouseenter; _target: #intro; visible: false;"
-          sound="src: url(song/song.mp3); on: mouseenter; loop: true"
+
           animation="
             property: material.opacity;
             from: 0; 
@@ -285,16 +289,15 @@
 
       <!-- <a-plane id="endBtn" color="#0080FF" height="2" width="5" rotation="-90 0 0"></a-plane> -->
       <!-- <a-box id="endBtn" color="#fdfd96" depth="2" height="5" rotation="0 0 0" position="0 0 0.2"></a-box> -->
-      <a-entity id="endBtn" look-controls geometry="primitive: plane; height: 0.2; width: 0.6" material="color: #fff864"
-        position="0 -0.5 0"
-        text="width: 1; value: Are you sure you want to \n end the experience?; align: center; color: #ff8800" animation="
+      <a-entity id="endBtn" look-controls geometry="primitive: plane; height: 0.5; width: auto" material="color: #fff864"
+        position="0 -0.2 0"
+        text="width: 2.5; value: Are you sure you want to \n end the experience?; align: center; color: #ff8800" animation="
                   property: material.opacity;
                   from: 0; 
                   to: 1; 
                   dur: 1000; 
                   delay: 2000" 
-        event-set__enter="_event: mouseenter; _target: #intro; visible: true"
-        event-set__leave="_event: mouseleave; _target: #main; visible: false">
+        visible="false">
       </a-entity>
 
 

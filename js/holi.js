@@ -11,7 +11,21 @@ document.addEventListener("DOMContentLoaded", () => {
     sceneEl.emit('showFog');
   };
 
-  document.getElementById('introBtn').addEventListener('mouseenter', () => {
+  const bgSong = document.querySelector('#bgSong');
+  const intro = document.querySelector('#intro');
+  const main = document.querySelector('#main');
+  const endBtn = document.querySelector('#endBtn');
+
+  AFRAME.registerComponent('audiohandler', {
+    init: function () {
+      this.el.addEventListener('click', () => {
+        bgSong.play();
+      });
+    }
+  })
+
+  document.getElementById('introBtn').addEventListener('click', () => {
+    
 
     const auntyEl = document.querySelector('#aunty');
     const boyEl = document.querySelector('#boy');
@@ -22,8 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const guy1El = document.querySelector('#guy1');
     const girl1El = document.querySelector('#girl1');
     const excitedEl = document.querySelector('#excited');
-    const endBtn = document.querySelector('#endBtn');
-    const SoundBtn = document.querySelector('#introBtn');
+    // const SoundBtn = document.querySelector('#introBtn');
 
     const explosion1 = document.querySelector('#explosion-1');
     const explosion2 = document.querySelector('#explosion-2');
@@ -34,6 +47,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const explosion7 = document.querySelector('#explosion-7');
     const explosion8 = document.querySelector('#explosion-8');
     const explosion9 = document.querySelector('#explosion-9');
+
+    bgSong.play();
+    intro.setAttribute('visible', false);
+    main.setAttribute('visible', true);
+    endBtn.setAttribute('visible', true);
+
 
     auntyEl.addEventListener('mouseenter', () => {
       setFogColor('#22B2E7');
@@ -203,12 +222,14 @@ document.addEventListener("DOMContentLoaded", () => {
       });  
     });
 
-    endBtn.addEventListener('mouseenter', () => {
+    endBtn.addEventListener('click', () => {
       console.log("exit scene");
 
       setTimeout(function () {
         endBtn.setAttribute('visible', false);
-        SoundBtn.components.sound.stopSound();
+        intro.setAttribute('visible', true);
+        main.setAttribute('visible', false);
+        bgSong.stopSound();
       }, 4000);
 
 
