@@ -217,14 +217,14 @@ document.addEventListener("DOMContentLoaded", () => {
           });
         });
 
-        endBtn.addEventListener('mouseenter', () => {
+        endBtn.addEventListener('click', () => {
 
-          setTimeout(function () {
+          // setTimeout(function () {
             endBtn.setAttribute('visible', false);
             intro.setAttribute('visible', true);
             main.setAttribute('visible', false);
             bgSong.components.sound.stopSound();
-          }, 2000);
+          // }, 2000);
 
 
         });
