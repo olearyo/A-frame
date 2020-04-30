@@ -217,7 +217,7 @@ document.addEventListener("DOMContentLoaded", () => {
           });
         });
 
-        endBtn.addEventListener('click', () => {
+        endBtn.addEventListener('mouseenter', () => {
 
           setTimeout(function () {
             endBtn.setAttribute('visible', false);
