@@ -16,8 +16,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const main = document.querySelector('#main');
   const endBtn = document.querySelector('#endBtn');
 
+  AFRAME.registerComponent('audiohandler', {
+    init: function () {
+      this.el.addEventListener('click', () => {
+        bgSong.play();
+      });
+    }
+  })
 
   document.getElementById('introBtn').addEventListener('click', () => {
+    
 
     const auntyEl = document.querySelector('#aunty');
     const boyEl = document.querySelector('#boy');
