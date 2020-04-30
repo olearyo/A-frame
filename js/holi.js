@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     sceneEl.emit('showFog');
   };
 
-  const bgSong = document.querySelector('#bgSong');
+  const bgSong = document.querySelector('[sound]');
   const intro = document.querySelector('#intro');
   const main = document.querySelector('#main');
   const endBtn = document.querySelector('#endBtn');
@@ -19,7 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
   AFRAME.registerComponent('audiohandler', {
     init: function () {
       this.el.addEventListener('click', () => {
-        bgSong.play();
+
+        bgSong.components.sound.playSound();
 
         const auntyEl = document.querySelector('#aunty');
         const boyEl = document.querySelector('#boy');
@@ -42,7 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const explosion8 = document.querySelector('#explosion-8');
         const explosion9 = document.querySelector('#explosion-9');
 
-        bgSong.play();
         intro.setAttribute('visible', false);
         main.setAttribute('visible', true);
         endBtn.setAttribute('visible', true);
