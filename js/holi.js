@@ -219,14 +219,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         endBtn.addEventListener('click', () => {
-          console.log("exit scene");
 
           setTimeout(function () {
             endBtn.setAttribute('visible', false);
             intro.setAttribute('visible', true);
             main.setAttribute('visible', false);
-            bgSong.stopSound();
-          }, 4000);
+            bgSong.components.sound.stopSound();
+          }, 2000);
 
 
         });
