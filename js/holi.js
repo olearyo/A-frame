@@ -20,7 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
     init: function () {
       this.el.addEventListener('click', () => {
 
-        bgSong.components.sound.playSound();
+        setTimeout(() => {
+          bgSong.components.sound.playSound();
+        }, 10);
 
         const auntyEl = document.querySelector('#aunty');
         const boyEl = document.querySelector('#boy');
