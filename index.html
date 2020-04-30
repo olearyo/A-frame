@@ -82,8 +82,8 @@
       <a-mixin id="openingScene" text="
         align: center; 
         width: 4;
-        value: Yay! Enjoy Holi! \n Look up when you \n want to end the experience;
-        color: #A61265;">
+        value: Welcome! \n Look back here \n to end the experience;
+        color: #ff8800;">
       </a-mixin>
     </a-assets>
     <!-- <a-scene fog="type: linear; color: #FFC0CB; far: 10; near: 0"> -->
@@ -180,14 +180,33 @@
       <a-entity id="main" visible="false">
         <a-sky id="bg" color="#F0FFFF" material="src: #background;"></a-sky>
         <a-plane position="0 -1 -4" rotation="-90 0 0" width="100" height="100" material="src: #floor; repeat: 20 20"></a-plane>
-
-        <a-text mixin="openingScene" position="0 1 -3" animation="
-          property: opacity;
-          from: 1; 
-          to: 0.2; 
-          dur: 1000; 
-          delay: 5000">
+        <!-- <a-text mixin="openingScene" position="0 1 -3" animation="
+            property: opacity;
+            from: 1; 
+            to: 0.2; 
+            dur: 1000; 
+            delay: 5000">
+        </a-text> -->
+        <a-text mixin="openingScene" position="-0.6 1 -3">
         </a-text>
+              <a-entity id="endBtn" geometry="primitive: plane; height: 0.5; width: 1.3" material="color: #fff864"
+                position="-0.8 0.3 -4" 
+                text="width: 4; value: End Experience; align: center; color: #ff8800" animation="
+                                property: material.opacity;
+                                from: 0; 
+                                to: 1; 
+                                dur: 1000; 
+                                delay: 2000" visible="false">
+              </a-entity>
+              <!-- <a-entity id="endBtn" look-controls geometry="primitive: plane; height: 0.5; width: auto" material="color: #fff864"
+                position="0 0.5 -4" rotation="-90 0 0"
+                text="width: 4; value: Are you sure you want to \n end the experience?; align: center; color: #ff8800" animation="
+                                property: material.opacity;
+                                from: 0; 
+                                to: 1; 
+                                dur: 1000; 
+                                delay: 2000" visible="false">
+              </a-entity> -->
         
         <a-entity id="aunty" geometry="primitive: plane; height: 1.5" position="-2 0.7 -2.8" 
           material="src: #person-1; transparent: true; opacity: 2; alpha-test: 0.5"
@@ -289,16 +308,7 @@
 
       <!-- <a-plane id="endBtn" color="#0080FF" height="2" width="5" rotation="-90 0 0"></a-plane> -->
       <!-- <a-box id="endBtn" color="#fdfd96" depth="2" height="5" rotation="0 0 0" position="0 0 0.2"></a-box> -->
-      <a-entity id="endBtn" look-controls geometry="primitive: plane; height: 0.5; width: auto" material="color: #fff864"
-        position="0 3 0"
-        text="width: 4; value: Are you sure you want to \n end the experience?; align: center; color: #ff8800" animation="
-                  property: material.opacity;
-                  from: 0; 
-                  to: 1; 
-                  dur: 1000; 
-                  delay: 2000" 
-        visible="false">
-      </a-entity>
+
 
 
 
