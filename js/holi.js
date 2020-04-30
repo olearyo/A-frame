@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
   AFRAME.registerComponent('audiohandler', {
     init: function () {
       this.el.addEventListener('click', () => {
-
         setTimeout(() => {
           bgSong.components.sound.playSound();
         }, 10);
@@ -250,16 +249,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
           });
         });
-
-
-
-
-
-
       });
     }
   })
-
-
-
 });
